@@ -23,7 +23,7 @@ const TaskInput = () => {
       const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
         params: {
           q: 'London', // Replace with dynamic user input if needed
-          appid: 'your_api_key', // Replace with your OpenWeatherMap API key
+          appid: '01928eaabad3e0bd5ff1c8e3a88a2f53', // Replace with your OpenWeatherMap API key
           units: 'metric',
         },
       });
