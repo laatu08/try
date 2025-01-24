@@ -13,7 +13,12 @@ const TaskList = () => {
     <ul>
       {tasks.map((task) => (
         <li key={task.id}>
-          {task.text}
+          {task.text} - {task.priority}
+          {task.weather && (
+            <span>
+              {' '}- Weather: {task.weather.main.temp}°C, {task.weather.weather[0].description}
+            </span>
+          )}
           <button onClick={() => deleteTask(task.id)}>Delete</button>
         </li>
       ))}

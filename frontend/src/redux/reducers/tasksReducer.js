@@ -1,13 +1,18 @@
 const initialState = {
-  tasks: [],
+  tasks: JSON.parse(localStorage.getItem('tasks')) || [],
 };
 
 const tasksReducer = (state = initialState, action) => {
+  let updatedTasks;
   switch (action.type) {
     case 'ADD_TASK':
-      return { ...state, tasks: [...state.tasks, action.payload] };
+      updatedTasks = [...state.tasks, action.payload];
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return { ...state, tasks: updatedTasks };
     case 'DELETE_TASK':
-      return { ...state, tasks: state.tasks.filter(task => task.id !== action.payload) };
+      updatedTasks = state.tasks.filter(task => task.id !== action.payload);
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return { ...state, tasks: updatedTasks };
     default:
       return state;
   }
