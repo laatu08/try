@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout } from '../redux/actions/authActions';
+import { login,logout } from '../redux/actions/authActions';
 
-const Login = () => {
+const Login = ({ onSwitchToRegister }) => {
   const [username, setUsername] = useState('');
   const dispatch = useDispatch();
+  const users = useSelector((state) => state.auth.users);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
+
   const handleLogin = () => {
-    if (username.trim()) {
+    if (username.trim() && users[username]) {
       dispatch(login({ username }));
       setUsername('');
+    } else {
+      alert('User not found. Please register first.');
+      onSwitchToRegister();
     }
   };
 
