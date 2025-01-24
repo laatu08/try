@@ -27,7 +27,7 @@ const Login = ({ onSwitchToRegister }) => {
     <div className="login">
       {isAuthenticated ? (
         <div>
-          <p>Welcome!</p>
+          {/* <p>Welcome!</p> */}
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (

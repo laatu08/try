@@ -4,11 +4,20 @@
   padding: 20px;
 }
 
+.register, .login {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .task-input {
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 .task-input input {
@@ -19,27 +28,36 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 .task-input select {
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 .task-input button {
-  margin-bottom: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.task-list button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
 }
 
 .task-list {
   margin-top: 20px;
 }
-
 .task-list ul {
   list-style: none;
   padding: 0;
 }
-
 .task-list .task-item {
   display: flex;
   justify-content: space-between;
@@ -52,15 +70,12 @@
   margin: 10px auto;
   background-color: #f9f9f9;
 }
-
 .task-list .task-item.priority-high {
   background-color: #ef1e1e;
 }
-
 .task-list .task-item.priority-medium {
   background-color: #fff3cd;
 }
-
 .task-list .task-item.priority-low {
   background-color: #d4edda;
 }
@@ -69,38 +84,8 @@
   .task-input input, .task-input select {
     width: 100%;
   }
-
   .task-list .task-item {
     flex-direction: column;
     align-items: flex-start;
   }
-}
-
-.register, .login {
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.register input, .login input {
-  padding: 10px;
-  width: 80%;
-  max-width: 300px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.register button, .login button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-}
-
-.register button:hover, .login button:hover {
-  background-color: #0056b3;
 }
