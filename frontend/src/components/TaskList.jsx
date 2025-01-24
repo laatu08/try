@@ -10,19 +10,21 @@ const TaskList = () => {
   };
 
   return (
+    <div className='task-list'>
     <ul>
       {tasks.map((task) => (
-        <li key={task.id}>
+        <li key={task.id} className={`task-item priority-${task.priority.toLowerCase()}`}>
           {task.text} - {task.priority}
           {task.weather && (
             <span>
-              {' '}- Weather: {task.weather.main.temp}°C, {task.weather.weather[0].description}
+              {/* {' '}- Weather: {task.weather.main.temp}°C, {task.weather.weather[0].description} */}
             </span>
           )}
           <button onClick={() => deleteTask(task.id)}>Delete</button>
         </li>
       ))}
     </ul>
+    </div>
   );
 };
 

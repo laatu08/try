@@ -12,7 +12,7 @@ const TaskInput = () => {
     try {
       const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
         params: {
-          q: 'London',
+          q: 'Jorhat',
           appid: '01928eaabad3e0bd5ff1c8e3a88a2f53', // Replace with your API key
           units: 'metric',
         },
@@ -35,7 +35,7 @@ const TaskInput = () => {
   };
 
   return (
-    <div>
+    <div className='task-input'>
       <input
         type="text"
         value={task}
