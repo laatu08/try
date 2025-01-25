@@ -31,7 +31,8 @@ The **Advanced React To-Do Application** is a feature-rich web application desig
 ### Clone the Repository
 ```bash
 git clone https://github.com/laatu08/try.git
-cd <repo-name>
+cd try
+cd frontend
 ```
 
 ### Install Dependencies
